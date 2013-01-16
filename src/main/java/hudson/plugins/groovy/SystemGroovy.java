@@ -7,7 +7,6 @@ import groovy.lang.GroovyShell;
 import hudson.Extension;
 import hudson.Launcher;
 import hudson.model.*;
-import hudson.security.ACL;
 import hudson.tasks.Builder;
 
 import java.io.IOException;
@@ -16,7 +15,7 @@ import hudson.util.Secret;
 import hudson.util.XStream2;
 import net.sf.json.JSONObject;
 
-import org.acegisecurity.Authentication;
+import org.springframework.security.Authentication;
 import org.codehaus.groovy.control.CompilerConfiguration;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
