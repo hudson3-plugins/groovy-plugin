@@ -13,6 +13,9 @@ import java.io.IOException;
 
 import hudson.util.Secret;
 import hudson.util.XStream2;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import net.sf.json.JSONObject;
 
 import org.springframework.security.Authentication;
@@ -75,9 +78,11 @@ public class SystemGroovy extends AbstractGroovy {
         shell.setVariable("launcher", launcher);
         shell.setVariable("listener", listener);
         shell.setVariable("out", listener.getLogger());
+        
+        InputStream inputStream = getScriptSource().getScriptStream(build.getWorkspace(),build,listener);
 
         output = shell.evaluate(
-            getScriptSource().getScriptStream(build.getWorkspace(),build,listener)
+             new BufferedReader(new InputStreamReader(inputStream))
         );
         
         if (output instanceof Boolean) {

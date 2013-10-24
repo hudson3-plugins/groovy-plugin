@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.eclipse.hudson.plugins</groupId>
         <artifactId>hudson-plugin-parent</artifactId>
-        <version>3.0.0</version>
+        <version>3.1.0</version>
     </parent>
 
     <groupId>org.hudsonci.plugins</groupId>
@@ -43,7 +43,7 @@
         <dependency>
             <groupId>org.codehaus.plexus</groupId>
             <artifactId>plexus-utils</artifactId>
-            <version>1.5.1</version>
+            <version>2.1</version>
         </dependency>
         <dependency>
             <groupId>org.hudsonci.plugins</groupId>
@@ -52,15 +52,26 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
-            <version>1.8.6</version>
+            <groupId>org.hudsonci.plugins</groupId>
+            <artifactId>groovy-support-plugin</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+        <dependency>
+            <artifactId>sisu-inject-plexus</artifactId>
+            <groupId>org.sonatype.sisu</groupId>
             <type>jar</type>
+            <version>2.1.1</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
   
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.eclipse.hudson.tools</groupId>
+                <artifactId>maven-hpi-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
