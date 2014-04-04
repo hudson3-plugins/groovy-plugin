@@ -18,10 +18,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import net.sf.json.JSONObject;
 
-import org.springframework.security.Authentication;
 import org.codehaus.groovy.control.CompilerConfiguration;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
+import org.springframework.security.core.Authentication;
 
 /**
  *  A Builder which executes system Groovy script in Hudson JVM (similar to HUDSON_URL/script).
